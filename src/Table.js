@@ -183,7 +183,7 @@ class EnhancedTable extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+    this.state = { 
       order: 'asc',
       orderBy: 'calories',
       selected: [],
