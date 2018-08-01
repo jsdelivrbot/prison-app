@@ -6,6 +6,7 @@ import './App.css';
 import MenuAppBar from './MenuAppBar';
 import EnhancedTableHead from './Table';
 import SimpleModal from './Modal';
+// import FacebookLogin from './FacebookLogin';
 
 class App extends Component {
   render() {
@@ -19,15 +20,14 @@ class App extends Component {
           <code>Here I am going to have the prison layout</code> 
         </p>
         
-        <p>
         <SimpleModal />
-        </p>
-        <p>
+
         <MenuAppBar />
-        </p>
-        <p>
+
+
+
           <EnhancedTableHead />
-        </p>
+
       </div>
     
     );
