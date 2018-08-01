@@ -21,9 +21,9 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
 let counter = 0;
-function createData(name, calories, fat, carbs, protein) {
+function createData(firstName, lastName, sentence, age) {
   counter += 1;
-  return { id: counter, name, calories, fat, carbs, protein };
+  return { id: counter, firstName, lastName, sentence, age };
 }
 
 function getSorting(order, orderBy) {
@@ -135,7 +135,7 @@ let EnhancedTableToolbar = props => {
           </Typography>
         ) : (
           <Typography variant="title" id="tableTitle">
-            Nutrition
+            Sanctuary
           </Typography>
         )}
       </div>
@@ -185,7 +185,7 @@ class EnhancedTable extends React.Component {
 
     this.state = { 
       order: 'asc',
-      orderBy: 'calories',
+      orderBy: 'lastName',
       selected: [],
       data: [
         createData('John', 'Hunt', 5, 46),
@@ -292,11 +292,11 @@ class EnhancedTable extends React.Component {
                         <Checkbox checked={isSelected} />
                       </TableCell>
                       <TableCell component="th" scope="row" padding="none">
-                        {n.name}
+                        {n.firstName}
                       </TableCell>
-                      <TableCell numeric>{n.calories}</TableCell>
-                      <TableCell numeric>{n.fat}</TableCell>
-                      <TableCell numeric>{n.carbs}</TableCell>
+                      <TableCell numeric>{n.lastName}</TableCell>
+                      <TableCell numeric>{n.sentence}</TableCell>
+                      <TableCell numeric>{n.age}</TableCell>
                     </TableRow>
                   );
                 })}
