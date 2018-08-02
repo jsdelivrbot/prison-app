@@ -23,22 +23,6 @@
     -->
 
     <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
-    <script>
-      const client = stitch.Stitch.initializeDefaultAppClient('first_application-xnjws');
-    
-      const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('<DATABASE>');
-    
-          client.auth.loginWithCredential(new AnonymousCredential()).then(user => 
-          db.collection('First_Collection').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
-        ).then(() => 
-          db.collection('First_Collection').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
-        ).then(docs => {
-            console.log("Found docs", docs)
-            console.log("[MongoDB Stitch] Connected to Stitch")
-        }).catch(err => {
-            console.error(err)
-        });
-    </script>
     <title>Prison App</title>
   </head> 
   <body onLoad="displayPrisonersOnLoad()">
@@ -57,5 +41,21 @@
     </noscript>
     <div id="root"></div>
     </div> 
+    <script>
+        const client = stitch.Stitch.initializeDefaultAppClient('first_application-xnjws');
+      
+        const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('First_Database');
+      
+            client.auth.loginWithCredential(new AnonymousCredential()).then(user => 
+            db.collection('First_Collection').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+          ).then(() => 
+            db.collection('First_Collection').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
+          ).then(docs => {
+              console.log("Found docs", docs)
+              console.log("[MongoDB Stitch] Connected to Stitch")
+          }).catch(err => {
+              console.error(err)
+          });
+      </script>
   </body>
 </html>
