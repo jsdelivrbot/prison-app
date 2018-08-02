@@ -39,7 +39,7 @@
 
        function displayPrisoners() {
              db.collection('First_Collection').find({}, {limit: 1000}).asArray().then(docs => {
-             const html = docs.map(c => "<div>" + c.comment + "</div>").join("");
+             const html = docs.map(c => "<div>" + c.prisoner + "</div>").join("");
              document.getElementById("First_Collection").innerHTML = html;
           });
        }

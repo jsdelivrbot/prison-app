@@ -6,6 +6,7 @@ import './App.css';
 import MenuAppBar from './MenuAppBar';
 import EnhancedTableHead from './Table';
 import SimpleModal from './Modal';
+import { Stitch } from 'mongodb-stitch-browser-sdk'
 // import FacebookLogin from './FacebookLogin';
 
 class App extends Component {
@@ -33,4 +34,6 @@ class App extends Component {
     );
   }
 }
+
+
 export default App;
