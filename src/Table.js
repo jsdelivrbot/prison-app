@@ -30,6 +30,7 @@ function getSorting(order, orderBy) {
   return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy];
 }
 
+
 const columnData = [
   { id: 'firstName', numeric: false, disablePadding: true, label: 'First Name' },
   { id: 'lastName', numeric: true, disablePadding: false, label: 'Last Name' },
@@ -279,7 +280,8 @@ class EnhancedTable extends React.Component {
                 .map(n => {
                   const isSelected = this.isSelected(n.id);
                   return (
-                    <TableRow
+                    <TableRow 
+                      id = "prisonerRow"
                       hover
                       onClick={event => this.handleClick(event, n.id)}
                       role="checkbox"
@@ -291,7 +293,7 @@ class EnhancedTable extends React.Component {
                       <TableCell padding="checkbox">
                         <Checkbox checked={isSelected} />
                       </TableCell>
-                      <TableCell component="th" scope="row" padding="none">
+                      <TableCell component="th" scope="row" padding="none" id="firstName">
                         {n.firstName}
                       </TableCell>
                       <TableCell numeric>{n.lastName}</TableCell>

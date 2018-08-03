@@ -26,50 +26,35 @@
     <title>Prison App</title>
   </head> 
   <body onLoad="displayPrisonersOnLoad()">
-     <!-- onLoad="displayPrisonersOnLoad()">
-      <h3>This is a great blog post</h3>
-      <div id="content">
-         I like to write about technology because I want to get on the
-         front page of hacker news.
-      </div>
-      <hr>
-      <div id="First_Collection"></div>
-      <hr>
-      Add a Prisoner: <input id="new_prisoner"><input type="submit" onClick="addPrisoner()"> -->
+      <script>
+
+          const client = stitch.Stitch.initializeDefaultAppClient('first_application-xnjws');
+        
+          const db = client.getServiceClient(stitch.RemoteMongoClient.factory,
+            "mongodb-atlas").db('First_Database');
+
+
+          function displayPrisonersOnLoad() {
+          client.auth
+            .loginWithCredential(new stitch.AnonymousCredential())
+            .then(displayPrisoners)
+            .catch(console.error);
+        }
+
+        function displayPrisoners() {
+          db.collection('First_Collection').find({}, {limit: 1000}).asArray()
+            .then(docs => {
+              const html = docs.map(p => "<TableRow>" + p.prisoner + "</TableRow>").join("");
+              document.getElementById("prisonerRow").innerHTML = html;
+            });
+        }
+        </script>
+      <div id="prisoner"></div>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-<<<<<<< HEAD
     </div> 
-=======
-    </div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
->>>>>>> parent of 5b9e012... Stable state
-    <script>
-        const client = stitch.Stitch.initializeDefaultAppClient('first_application-xnjws');
-      
-        const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('First_Database');
-      
-            client.auth.loginWithCredential(new AnonymousCredential()).then(user => 
-            db.collection('First_Collection').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
-          ).then(() => 
-            db.collection('First_Collection').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
-          ).then(docs => {
-              console.log("Found docs", docs)
-              console.log("[MongoDB Stitch] Connected to Stitch")
-          }).catch(err => {
-              console.error(err)
-          });
-      </script>
+    
   </body>
 </html>
