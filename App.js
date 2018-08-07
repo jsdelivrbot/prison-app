@@ -1,20 +1,9 @@
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
+var MongoClient = require('mongodb').MongoClient;
 
-// Connection URL
-const url = 'mongodb://localhost:27017';
-
-// Database Name
-const dbName = 'prison';
-
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, client) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
-
-  const db = client.db(dbName);
-
-  client.close();
-
-
+var uri = "mongodb+srv://marwan01:motdepasse@my-first-cluster-hzz9b.gcp.mongodb.net/First_Database?retryWrites=true";
+MongoClient.connect(uri, function(err, client) {
+   useNewUrlParser: true;
+   const collection = client.db("First_Database").collection("First_Collection");
+   // perform actions on the collection object
+   client.close();
 });

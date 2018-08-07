@@ -1,12 +1,12 @@
 {
   "mongoDS": {
-    "host": "localhost",
+    "host": "my-first-cluster-shard-00-00-hzz9b.gcp.mongodb.net",
     "port": 27017,
     "url": "",
     "database": "prison",
-    "password": "",
+    "password": "motdepasse",
     "name": "mongoDS",
-    "user": "",
+    "user": "marwan01",
     "connector": "mongodb"
   }
 }
