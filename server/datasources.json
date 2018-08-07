@@ -1,12 +1,12 @@
 {
-  "db": {
+  "First_Database": {
     "host": "localhost",
     "port": 27017,
-    "url": "mongodb+srv://marwan01:motdepasse@my-first-cluster-hzz9b.gcp.mongodb.net/test?retryWrites=true",
+    "url": "",
     "database": "First_Database",
-    "password": "motdepasse",
-    "name": "MongoDS",
-    "user": "marwan01",
+    "password": "",
+    "name": "First_Database",
+    "user": "",
     "connector": "mongodb"
   }
 }

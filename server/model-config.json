@@ -14,7 +14,7 @@
     ]
   },
   "Prisoner": {
-    "dataSource": "MongoDS",
+    "dataSource": "First_Database",
     "public": true
   }
 }
