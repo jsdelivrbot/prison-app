@@ -1,11 +1,11 @@
 {
-  "First_Database": {
+  "mongoDS": {
     "host": "localhost",
     "port": 27017,
     "url": "",
-    "database": "First_Database",
+    "database": "prison",
     "password": "",
-    "name": "First_Database",
+    "name": "mongoDS",
     "user": "",
     "connector": "mongodb"
   }
