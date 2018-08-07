@@ -1,4 +1,8 @@
 {
+  "ACL": {
+    "dataSource": "mongoDS",
+    "public": false
+  },
   "_meta": {
     "sources": [
       "loopback/common/models",
@@ -13,8 +17,8 @@
       "./mixins"
     ]
   },
-  "Prisoner": {
-    "dataSource": "First_Database",
+  "prisoner": {
+    "dataSource": "mongoDS",
     "public": true
   }
 }
