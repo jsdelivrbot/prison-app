@@ -1,12 +1,9 @@
 {
   "mongoDS": {
-    "host": "my-first-cluster-shard-00-00-hzz9b.gcp.mongodb.net",
     "port": 27017,
-    "url": "",
-    "database": "prison",
-    "password": "motdepasse",
+    "url": "mongodb+srv://marwan01:motdepasse@my-first-cluster-hzz9b.gcp.mongodb.net/prison?retryWrites=true",
+    "database": "prisoner",
     "name": "mongoDS",
-    "user": "marwan01",
     "connector": "mongodb"
   }
 }
