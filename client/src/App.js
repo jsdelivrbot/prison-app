@@ -9,6 +9,15 @@ import SimpleModal from './Modal';
 import { Stitch } from 'mongodb-stitch-browser-sdk'
 // import FacebookLogin from './FacebookLogin';
 
+var MongoClient = require('mongodb').MongoClient;
+
+var uri = "mongodb+srv://marwan01:motdepasse@my-first-cluster-hzz9b.gcp.mongodb.net/First_Database?retryWrites=true";
+MongoClient.connect(uri, function(err, client) {
+   const collection = client.db("First_Database").collection("First_Collection");
+   // perform actions on the collection object
+   client.close();
+});
+
 class App extends Component {
   render() {
     return (
