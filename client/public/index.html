@@ -26,7 +26,7 @@
     <title>Prison App</title>
   </head> 
   <body onLoad="displayPrisonersOnLoad()">
-      <script>
+      <!-- <script>
 
           const client = stitch.Stitch.initializeDefaultAppClient('first_application-xnjws');
         
@@ -48,8 +48,22 @@
               document.getElementById("prisonerRow").innerHTML = html;
             });
         }
-        </script>
-      <div id="prisoner"></div>
+        </script> -->
+        <div class="results-bar">
+          <p>Count of Results:</p>
+          <span id="num-results" class="results-bar__count"></span>
+        </div>
+        <table class="table table-striped">
+          <thead class="thead">
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Age</th>
+              <th>Sentence</th>
+            </tr>
+          </thead>
+          <tbody id='prisoners'></tbody>
+        </table>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
