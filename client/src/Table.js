@@ -20,6 +20,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 
+
 let counter = 0;
 function createData(firstName, lastName, sentence, age) {
   counter += 1;

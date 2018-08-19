@@ -4,7 +4,11 @@ import './App.css';
 import MenuAppBar from './MenuAppBar';
 import EnhancedTableHead from './Table';
 import SimpleModal from './Modal';
+import StitchApp from './StitchApp';
 
+const stitchApp = StitchApp();
+let prisoners = stitchApp.prisoner.find({}, {}).asArray(); // .then(displayPrisoners);
+prisoners.displayPrisoners();
 
 class App extends Component {
   render() {
